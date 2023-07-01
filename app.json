@@ -1,1 +1,723 @@
-{"_comment":"This file is generated. Please edit .homeycompose/app.json instead.","id":"com.ondilo.ico","version":"1.3.2","compatibility":">=5.0.0","platforms":["local","cloud"],"sdk":3,"brandColor":"#29A59B","name":{"en":"ICO"},"description":{"en":"Simplify your pool maintenance","da":"Forenkle din poolvedligeholdelse","de":"Vereinfachen Sie die Wartung Ihres Pools","es":"Simplifique el mantenimiento de su piscina","fr":"Simplifiez l'entretien de votre piscine","it":"Semplifica la manutenzione della tua piscina","nl":"Vereenvoudig uw zwembadonderhoud","no":"Forenkle vedlikeholdet av bassenget","sv":"Förenkla ditt poolunderhåll"},"category":["appliances"],"tags":{"en":["Ondilo","ICO","health","swimming","pool","spa","measures"],"da":["Ondilo","ICO","sundhed","svømning","pool","spa","foranstaltninger"],"de":["Ondilo","ICO","Gesundheit","Schwimmen","Schwimmbad","Spa","Maße"],"es":["Ondilo","ICO","salud","nadando","piscina","spa","medidas"],"fr":["Ondilo","ICO","santé","la natation","piscine","spa","les mesures"],"it":["Ondilo","ICO","salute","nuoto","piscina","spa","le misure"],"nl":["Ondilo","ICO","gezondheid","zwembad","bad","badplaats","metingen"],"no":["Ondilo","ICO","Helse","svømming","basseng","spa","målinger"],"sv":["Ondilo","ICO","hälsa","simning","slå samman","spa","åtgärder"]},"images":{"large":"/assets/images/large.png","small":"/assets/images/small.png"},"permissions":[],"author":{"name":"Edwin van de Pol"},"contributors":{"developers":[{"name":"Edwin van de Pol","email":"developer@edwinvandepol.nl"}],"translators":[{"name":"🇫🇷 François Akermann"}]},"contributing":{"donate":{"paypal":{"username":"edwinvdpol"}}},"bugs":{"url":"https://community.homey.app/t/37536"},"homeyCommunityTopicId":37536,"homepage":"https://ondilo.com","support":"https://community.homey.app/t/37536","flow":{"triggers":[{"title":{"en":"The redox value changed","da":"Redoxværdien er ændret","de":"Der Redoxwert hat sich geändert","es":"El valor redox ha cambiado","fr":"La valeur redox a changé","it":"Il valore redox è cambiato","nl":"De redoxwaarde is veranderd","no":"Redoksverdien er endret","sv":"Redoxvärdet har ändrats"},"platforms":["local","cloud"],"args":[{"type":"device","name":"device","filter":"driver_id=pool|spa"}],"tokens":[{"name":"measure_orp","title":{"en":"Redox"},"type":"number","example":400}],"id":"measure_orp_changed"},{"title":{"en":"The pH value changed","da":"PH-værdien er ændret","de":"Der pH-Wert hat sich geändert","es":"El valor de pH ha cambiado","fr":"La valeur du pH a changé","it":"Il valore del pH è cambiato","nl":"De pH waarde is veranderd","no":"pH-verdien har endret seg","sv":"pH-värdet har ändrats"},"platforms":["local","cloud"],"args":[{"type":"device","name":"device","filter":"driver_id=pool|spa"}],"tokens":[{"name":"measure_ph","title":{"en":"pH"},"type":"number","example":7.2}],"id":"measure_ph_changed"},{"title":{"en":"The RSSI changed","da":"RSSI er ændret","de":"Der RSSI hat sich geändert","es":"El RSSI ha cambiado","fr":"Le RSSI a changé","it":"L'RSSI è cambiato","nl":"De RSSI is veranderd","no":"RSSI har endret seg","sv":"RSSI har ändrats"},"platforms":["local","cloud"],"args":[{"type":"device","name":"device","filter":"driver_id=pool|spa"}],"tokens":[{"name":"measure_rssi","title":{"en":"RSSI"},"type":"number","example":50}],"id":"measure_rssi_changed"},{"title":{"en":"The salinity changed","da":"Saltindholdet har ændret sig","de":"Der Salzgehalt hat sich geändert","es":"La salinidad ha cambiado","fr":"La salinité a changé","it":"La salinità è cambiata","nl":"Het zoutgehalte is veranderd","no":"Saltinnholdet har endret seg","sv":"Salthalten har förändrats"},"platforms":["local","cloud"],"args":[{"type":"device","name":"device","filter":"driver_id=pool|spa"}],"tokens":[{"name":"measure_salt","title":{"en":"Salinity","da":"Saltindhold","de":"Salzgehalt","es":"Salinidad","fr":"Salinité","it":"Salinità","nl":"Zoutgehalte","no":"Saltinnhold","sv":"Salthalt"},"type":"number","example":40}],"id":"measure_salt_changed"},{"title":{"en":"The TDS changed","da":"TDS er ændret","de":"Das TDS hat sich geändert","es":"El TDS ha cambiado","fr":"La TDS a changé","it":"Il TDS è cambiato","nl":"De TDS is veranderd","no":"TDS har endret seg","sv":"TDS har förändrats"},"platforms":["local","cloud"],"args":[{"type":"device","name":"device","filter":"driver_id=pool|spa"}],"tokens":[{"name":"measure_tds","title":{"en":"TDS"},"type":"number","example":400}],"id":"measure_tds_changed"}]},"drivers":[{"class":"other","capabilities":["measure_battery","measure_orp","measure_ph","measure_rssi","measure_salt","measure_tds","measure_temperature"],"images":{"large":"/drivers/pool/assets/images/large.png","small":"/drivers/pool/assets/images/small.png"},"platforms":["local","cloud"],"connectivity":["cloud"],"energy":{"batteries":["INTERNAL"]},"settings":[{"type":"group","label":{"en":"Properties","da":"Ejendomme","de":"Eigenschaften","es":"Propiedades","fr":"Propriétés","it":"Proprietà","nl":"Eigenschappen","no":"Eiendommer","sv":"Egenskaper"},"children":[{"id":"volume","type":"label","label":{"en":"Total Volume","da":"Samlet volumen","de":"Volle Lautstärke","es":"Volumen total","fr":"Volume total","it":"Volume totale","nl":"Totaal volume","no":"Totalt volum","sv":"Total volym"},"value":"-"},{"id":"serial_number","type":"label","label":{"en":"Serial Number","da":"Serienummer","de":"Ordnungsnummer","es":"Número de serie","fr":"Numéro de série","it":"Numero di serie","nl":"Serienummer","no":"Serienummer","sv":"Serienummer"},"value":"-"},{"id":"sw_version","type":"label","label":{"en":"Software Version","da":"Softwareversion","de":"Softwareversion","es":"Versión del software","fr":"Une version de logiciel","it":"Versione software","nl":"Software versie","no":"Programvareversjon","sv":"Mjukvaru-version"},"value":"-"}]}],"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"name":{"en":"ICO Pool"},"id":"pool"},{"class":"other","capabilities":["measure_battery","measure_orp","measure_ph","measure_rssi","measure_salt","measure_tds","measure_temperature"],"images":{"large":"/drivers/spa/assets/images/large.png","small":"/drivers/spa/assets/images/small.png"},"platforms":["local","cloud"],"connectivity":["cloud"],"energy":{"batteries":["INTERNAL"]},"settings":[{"type":"group","label":{"en":"Properties","da":"Ejendomme","de":"Eigenschaften","es":"Propiedades","fr":"Propriétés","it":"Proprietà","nl":"Eigenschappen","no":"Eiendommer","sv":"Egenskaper"},"children":[{"id":"volume","type":"label","label":{"en":"Total Volume","da":"Samlet volumen","de":"Volle Lautstärke","es":"Volumen total","fr":"Volume total","it":"Volume totale","nl":"Totaal volume","no":"Totalt volum","sv":"Total volym"},"value":"-"},{"id":"serial_number","type":"label","label":{"en":"Serial Number","da":"Serienummer","de":"Ordnungsnummer","es":"Número de serie","fr":"Numéro de série","it":"Numero di serie","nl":"Serienummer","no":"Serienummer","sv":"Serienummer"},"value":"-"},{"id":"sw_version","type":"label","label":{"en":"Software Version","da":"Softwareversion","de":"Softwareversion","es":"Versión del software","fr":"Une version de logiciel","it":"Versione software","nl":"Software versie","no":"Programvareversjon","sv":"Mjukvaru-version"},"value":"-"}]}],"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"name":{"en":"ICO Spa"},"id":"spa"}],"capabilities":{"measure_orp":{"type":"number","title":{"en":"Redox value","da":"Redox-værdi","de":"Redoxwert","es":"Valor redox","fr":"Valeur redox","it":"Valore redox","nl":"Redoxwaarde","no":"Redox-verdi","sv":"Redoxvärde"},"uiComponent":"sensor","icon":"/assets/orp.svg","units":{"en":"mV"},"insights":true,"desc":{"en":"Redox value in millivolts (mV)","da":"Redoxværdi i millivolt (mV)","de":"Redoxwert in Millivolt (mV)","es":"Valor redox en milivoltios (mV)","fr":"Valeur redox en millivolts (mV)","it":"Valore redox in millivolt (mV)","nl":"Redoxwaarde in millivolt (mV)","no":"Redoksverdi i millivolt (mV)","sv":"Redoxvärde i millivolt (mV)"},"chartType":"stepLine","getable":true,"setable":false},"measure_ph":{"type":"number","title":{"en":"pH value","da":"pH-værdi","de":"pH-Wert","es":"Valor de pH","fr":"Valeur du pH","it":"Valore del pH","nl":"pH waarde","no":"pH verdi","sv":"pH-värde"},"uiComponent":"sensor","icon":"/assets/ph.svg","decimals":2,"insights":true,"chartType":"spline","getable":true,"setable":false},"measure_rssi":{"type":"number","title":{"en":"RSSI"},"uiComponent":"sensor","icon":"/assets/rssi.svg","units":{"en":"%"},"insights":true,"min":0,"max":100,"desc":{"en":"Received signal strength indicator in percentage (%)","da":"Modtaget signalstyrkeindikator i procent (%)","de":"Anzeige der empfangenen Signalstärke in Prozent (%)","es":"Indicador de intensidad de la señal recibida en porcentaje (%)","fr":"Indicateur de force du signal reçu en pourcentage (%)","it":"Indicatore di potenza del segnale ricevuto in percentuale (%)","nl":"Indicator ontvangen signaalsterkte in procenten (%)","no":"Mottatt signalstyrkeindikator i prosent (%)","sv":"Mottagen signalstyrkaindikator i procent (%)"},"chartType":"spline","getable":true,"setable":false},"measure_salt":{"type":"number","title":{"en":"Salinity","da":"Saltindhold","de":"Salzgehalt","es":"Salinidad","fr":"Salinité","it":"Salinità","nl":"Zoutgehalte","no":"Saltinnhold","sv":"Salthalt"},"uiComponent":"sensor","icon":"/assets/salt.svg","units":{"en":"mg/L"},"decimals":2,"insights":true,"desc":{"en":"Salinity in milligrams per liter (mg/L)","da":"Saltindhold i milligram pr. Liter (mg/L)","de":"Salzgehalt in Milligramm pro Liter (mg/L)","es":"Salinidad en miligramos por litro (mg/L)","fr":"Salinité en milligrammes par litre (mg/L)","it":"Salinità in milligrammi per litro (mg/L)","nl":"Zoutgehalte in milligram per liter (mg/L)","no":"Saltinnhold i milligram per liter (mg/L)","sv":"Salthalt i milligram per liter (mg/L)"},"chartType":"spline","getable":true,"setable":false},"measure_tds":{"type":"number","title":{"en":"TDS"},"uiComponent":"sensor","icon":"/assets/tds.svg","units":{"en":"ppm"},"insights":true,"desc":{"en":"TDS in parts-per-million (ppm)","da":"TDS-dele pr. Million (ppm)","de":"TDS in Teilen pro Million (ppm)","es":"TDS en partes por millón (ppm)","fr":"TDS en parts par million (ppm)","it":"TDS in parti per milione (ppm)","nl":"TDS deeltjes per miljoen (ppm)","no":"TDS i deler per million (ppm)","sv":"TDS i delar per miljon (ppm)"},"chartType":"spline","getable":true,"setable":false}}}
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.ondilo.ico",
+  "version": "1.3.2",
+  "compatibility": ">=5.0.0",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "sdk": 3,
+  "brandColor": "#29A59B",
+  "name": {
+    "en": "ICO"
+  },
+  "description": {
+    "en": "Simplify your pool maintenance",
+    "da": "Forenkle din poolvedligeholdelse",
+    "de": "Vereinfachen Sie die Wartung Ihres Pools",
+    "es": "Simplifique el mantenimiento de su piscina",
+    "fr": "Simplifiez l'entretien de votre piscine",
+    "it": "Semplifica la manutenzione della tua piscina",
+    "nl": "Vereenvoudig uw zwembadonderhoud",
+    "no": "Forenkle vedlikeholdet av bassenget",
+    "sv": "Förenkla ditt poolunderhåll"
+  },
+  "category": [
+    "appliances"
+  ],
+  "tags": {
+    "en": [
+      "Ondilo",
+      "ICO",
+      "health",
+      "swimming",
+      "pool",
+      "spa",
+      "measures"
+    ],
+    "da": [
+      "Ondilo",
+      "ICO",
+      "sundhed",
+      "svømning",
+      "pool",
+      "spa",
+      "foranstaltninger"
+    ],
+    "de": [
+      "Ondilo",
+      "ICO",
+      "Gesundheit",
+      "Schwimmen",
+      "Schwimmbad",
+      "Spa",
+      "Maße"
+    ],
+    "es": [
+      "Ondilo",
+      "ICO",
+      "salud",
+      "nadando",
+      "piscina",
+      "spa",
+      "medidas"
+    ],
+    "fr": [
+      "Ondilo",
+      "ICO",
+      "santé",
+      "la natation",
+      "piscine",
+      "spa",
+      "les mesures"
+    ],
+    "it": [
+      "Ondilo",
+      "ICO",
+      "salute",
+      "nuoto",
+      "piscina",
+      "spa",
+      "le misure"
+    ],
+    "nl": [
+      "Ondilo",
+      "ICO",
+      "gezondheid",
+      "zwembad",
+      "bad",
+      "badplaats",
+      "metingen"
+    ],
+    "no": [
+      "Ondilo",
+      "ICO",
+      "Helse",
+      "svømming",
+      "basseng",
+      "spa",
+      "målinger"
+    ],
+    "sv": [
+      "Ondilo",
+      "ICO",
+      "hälsa",
+      "simning",
+      "slå samman",
+      "spa",
+      "åtgärder"
+    ]
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "permissions": [],
+  "author": {
+    "name": "Edwin van de Pol"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Edwin van de Pol",
+        "email": "developer@edwinvandepol.nl"
+      }
+    ],
+    "translators": [
+      {
+        "name": "🇫🇷 François Akermann"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "edwinvdpol"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://community.homey.app/t/37536"
+  },
+  "homeyCommunityTopicId": 37536,
+  "homepage": "https://ondilo.com",
+  "support": "https://community.homey.app/t/37536",
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "The redox value changed",
+          "da": "Redoxværdien er ændret",
+          "de": "Der Redoxwert hat sich geändert",
+          "es": "El valor redox ha cambiado",
+          "fr": "La valeur redox a changé",
+          "it": "Il valore redox è cambiato",
+          "nl": "De redoxwaarde is veranderd",
+          "no": "Redoksverdien er endret",
+          "sv": "Redoxvärdet har ändrats"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool|spa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_orp",
+            "title": {
+              "en": "Redox"
+            },
+            "type": "number",
+            "example": 400
+          }
+        ],
+        "id": "measure_orp_changed"
+      },
+      {
+        "title": {
+          "en": "The pH value changed",
+          "da": "PH-værdien er ændret",
+          "de": "Der pH-Wert hat sich geändert",
+          "es": "El valor de pH ha cambiado",
+          "fr": "La valeur du pH a changé",
+          "it": "Il valore del pH è cambiato",
+          "nl": "De pH waarde is veranderd",
+          "no": "pH-verdien har endret seg",
+          "sv": "pH-värdet har ändrats"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool|spa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_ph",
+            "title": {
+              "en": "pH"
+            },
+            "type": "number",
+            "example": 7.2
+          }
+        ],
+        "id": "measure_ph_changed"
+      },
+      {
+        "title": {
+          "en": "The RSSI changed",
+          "da": "RSSI er ændret",
+          "de": "Der RSSI hat sich geändert",
+          "es": "El RSSI ha cambiado",
+          "fr": "Le RSSI a changé",
+          "it": "L'RSSI è cambiato",
+          "nl": "De RSSI is veranderd",
+          "no": "RSSI har endret seg",
+          "sv": "RSSI har ändrats"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool|spa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_rssi",
+            "title": {
+              "en": "RSSI"
+            },
+            "type": "number",
+            "example": 50
+          }
+        ],
+        "id": "measure_rssi_changed"
+      },
+      {
+        "title": {
+          "en": "The salinity changed",
+          "da": "Saltindholdet har ændret sig",
+          "de": "Der Salzgehalt hat sich geändert",
+          "es": "La salinidad ha cambiado",
+          "fr": "La salinité a changé",
+          "it": "La salinità è cambiata",
+          "nl": "Het zoutgehalte is veranderd",
+          "no": "Saltinnholdet har endret seg",
+          "sv": "Salthalten har förändrats"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool|spa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_salt",
+            "title": {
+              "en": "Salinity",
+              "da": "Saltindhold",
+              "de": "Salzgehalt",
+              "es": "Salinidad",
+              "fr": "Salinité",
+              "it": "Salinità",
+              "nl": "Zoutgehalte",
+              "no": "Saltinnhold",
+              "sv": "Salthalt"
+            },
+            "type": "number",
+            "example": 40
+          }
+        ],
+        "id": "measure_salt_changed"
+      },
+      {
+        "title": {
+          "en": "The TDS changed",
+          "da": "TDS er ændret",
+          "de": "Das TDS hat sich geändert",
+          "es": "El TDS ha cambiado",
+          "fr": "La TDS a changé",
+          "it": "Il TDS è cambiato",
+          "nl": "De TDS is veranderd",
+          "no": "TDS har endret seg",
+          "sv": "TDS har förändrats"
+        },
+        "platforms": [
+          "local",
+          "cloud"
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool|spa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_tds",
+            "title": {
+              "en": "TDS"
+            },
+            "type": "number",
+            "example": 400
+          }
+        ],
+        "id": "measure_tds_changed"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "measure_orp",
+        "measure_ph",
+        "measure_rssi",
+        "measure_salt",
+        "measure_tds",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/pool/assets/images/large.png",
+        "small": "/drivers/pool/assets/images/small.png"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Properties",
+            "da": "Ejendomme",
+            "de": "Eigenschaften",
+            "es": "Propiedades",
+            "fr": "Propriétés",
+            "it": "Proprietà",
+            "nl": "Eigenschappen",
+            "no": "Eiendommer",
+            "sv": "Egenskaper"
+          },
+          "children": [
+            {
+              "id": "volume",
+              "type": "label",
+              "label": {
+                "en": "Total Volume",
+                "da": "Samlet volumen",
+                "de": "Volle Lautstärke",
+                "es": "Volumen total",
+                "fr": "Volume total",
+                "it": "Volume totale",
+                "nl": "Totaal volume",
+                "no": "Totalt volum",
+                "sv": "Total volym"
+              },
+              "value": "-"
+            },
+            {
+              "id": "serial_number",
+              "type": "label",
+              "label": {
+                "en": "Serial Number",
+                "da": "Serienummer",
+                "de": "Ordnungsnummer",
+                "es": "Número de serie",
+                "fr": "Numéro de série",
+                "it": "Numero di serie",
+                "nl": "Serienummer",
+                "no": "Serienummer",
+                "sv": "Serienummer"
+              },
+              "value": "-"
+            },
+            {
+              "id": "sw_version",
+              "type": "label",
+              "label": {
+                "en": "Software Version",
+                "da": "Softwareversion",
+                "de": "Softwareversion",
+                "es": "Versión del software",
+                "fr": "Une version de logiciel",
+                "it": "Versione software",
+                "nl": "Software versie",
+                "no": "Programvareversjon",
+                "sv": "Mjukvaru-version"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "name": {
+        "en": "ICO Pool"
+      },
+      "id": "pool"
+    },
+    {
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "measure_orp",
+        "measure_ph",
+        "measure_rssi",
+        "measure_salt",
+        "measure_tds",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/spa/assets/images/large.png",
+        "small": "/drivers/spa/assets/images/small.png"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Properties",
+            "da": "Ejendomme",
+            "de": "Eigenschaften",
+            "es": "Propiedades",
+            "fr": "Propriétés",
+            "it": "Proprietà",
+            "nl": "Eigenschappen",
+            "no": "Eiendommer",
+            "sv": "Egenskaper"
+          },
+          "children": [
+            {
+              "id": "volume",
+              "type": "label",
+              "label": {
+                "en": "Total Volume",
+                "da": "Samlet volumen",
+                "de": "Volle Lautstärke",
+                "es": "Volumen total",
+                "fr": "Volume total",
+                "it": "Volume totale",
+                "nl": "Totaal volume",
+                "no": "Totalt volum",
+                "sv": "Total volym"
+              },
+              "value": "-"
+            },
+            {
+              "id": "serial_number",
+              "type": "label",
+              "label": {
+                "en": "Serial Number",
+                "da": "Serienummer",
+                "de": "Ordnungsnummer",
+                "es": "Número de serie",
+                "fr": "Numéro de série",
+                "it": "Numero di serie",
+                "nl": "Serienummer",
+                "no": "Serienummer",
+                "sv": "Serienummer"
+              },
+              "value": "-"
+            },
+            {
+              "id": "sw_version",
+              "type": "label",
+              "label": {
+                "en": "Software Version",
+                "da": "Softwareversion",
+                "de": "Softwareversion",
+                "es": "Versión del software",
+                "fr": "Une version de logiciel",
+                "it": "Versione software",
+                "nl": "Software versie",
+                "no": "Programvareversjon",
+                "sv": "Mjukvaru-version"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "name": {
+        "en": "ICO Spa"
+      },
+      "id": "spa"
+    }
+  ],
+  "capabilities": {
+    "measure_orp": {
+      "type": "number",
+      "title": {
+        "en": "Redox value",
+        "da": "Redox-værdi",
+        "de": "Redoxwert",
+        "es": "Valor redox",
+        "fr": "Valeur redox",
+        "it": "Valore redox",
+        "nl": "Redoxwaarde",
+        "no": "Redox-verdi",
+        "sv": "Redoxvärde"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/orp.svg",
+      "units": {
+        "en": "mV"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Redox value in millivolts (mV)",
+        "da": "Redoxværdi i millivolt (mV)",
+        "de": "Redoxwert in Millivolt (mV)",
+        "es": "Valor redox en milivoltios (mV)",
+        "fr": "Valeur redox en millivolts (mV)",
+        "it": "Valore redox in millivolt (mV)",
+        "nl": "Redoxwaarde in millivolt (mV)",
+        "no": "Redoksverdi i millivolt (mV)",
+        "sv": "Redoxvärde i millivolt (mV)"
+      },
+      "chartType": "stepLine",
+      "getable": true,
+      "setable": false
+    },
+    "measure_ph": {
+      "type": "number",
+      "title": {
+        "en": "pH value",
+        "da": "pH-værdi",
+        "de": "pH-Wert",
+        "es": "Valor de pH",
+        "fr": "Valeur du pH",
+        "it": "Valore del pH",
+        "nl": "pH waarde",
+        "no": "pH verdi",
+        "sv": "pH-värde"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/ph.svg",
+      "decimals": 2,
+      "insights": true,
+      "chartType": "spline",
+      "getable": true,
+      "setable": false
+    },
+    "measure_rssi": {
+      "type": "number",
+      "title": {
+        "en": "RSSI"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/rssi.svg",
+      "units": {
+        "en": "%"
+      },
+      "insights": true,
+      "min": 0,
+      "max": 100,
+      "desc": {
+        "en": "Received signal strength indicator in percentage (%)",
+        "da": "Modtaget signalstyrkeindikator i procent (%)",
+        "de": "Anzeige der empfangenen Signalstärke in Prozent (%)",
+        "es": "Indicador de intensidad de la señal recibida en porcentaje (%)",
+        "fr": "Indicateur de force du signal reçu en pourcentage (%)",
+        "it": "Indicatore di potenza del segnale ricevuto in percentuale (%)",
+        "nl": "Indicator ontvangen signaalsterkte in procenten (%)",
+        "no": "Mottatt signalstyrkeindikator i prosent (%)",
+        "sv": "Mottagen signalstyrkaindikator i procent (%)"
+      },
+      "chartType": "spline",
+      "getable": true,
+      "setable": false
+    },
+    "measure_salt": {
+      "type": "number",
+      "title": {
+        "en": "Salinity",
+        "da": "Saltindhold",
+        "de": "Salzgehalt",
+        "es": "Salinidad",
+        "fr": "Salinité",
+        "it": "Salinità",
+        "nl": "Zoutgehalte",
+        "no": "Saltinnhold",
+        "sv": "Salthalt"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/salt.svg",
+      "units": {
+        "en": "mg/L"
+      },
+      "decimals": 2,
+      "insights": true,
+      "desc": {
+        "en": "Salinity in milligrams per liter (mg/L)",
+        "da": "Saltindhold i milligram pr. Liter (mg/L)",
+        "de": "Salzgehalt in Milligramm pro Liter (mg/L)",
+        "es": "Salinidad en miligramos por litro (mg/L)",
+        "fr": "Salinité en milligrammes par litre (mg/L)",
+        "it": "Salinità in milligrammi per litro (mg/L)",
+        "nl": "Zoutgehalte in milligram per liter (mg/L)",
+        "no": "Saltinnhold i milligram per liter (mg/L)",
+        "sv": "Salthalt i milligram per liter (mg/L)"
+      },
+      "chartType": "spline",
+      "getable": true,
+      "setable": false
+    },
+    "measure_tds": {
+      "type": "number",
+      "title": {
+        "en": "TDS"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/tds.svg",
+      "units": {
+        "en": "ppm"
+      },
+      "insights": true,
+      "desc": {
+        "en": "TDS in parts-per-million (ppm)",
+        "da": "TDS-dele pr. Million (ppm)",
+        "de": "TDS in Teilen pro Million (ppm)",
+        "es": "TDS en partes por millón (ppm)",
+        "fr": "TDS en parts par million (ppm)",
+        "it": "TDS in parti per milione (ppm)",
+        "nl": "TDS deeltjes per miljoen (ppm)",
+        "no": "TDS i deler per million (ppm)",
+        "sv": "TDS i delar per miljon (ppm)"
+      },
+      "chartType": "spline",
+      "getable": true,
+      "setable": false
+    }
+  }
+}
